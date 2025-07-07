@@ -10,7 +10,7 @@ public class Cliente {
 
     @Id
     // No se pondrá @GeneratedValue porque será el INE (se pondrá manual)
-    private Integer id;
+    private int id;
     private String nombre;
     private String apellido;
     private Long celular;
@@ -24,11 +24,11 @@ public class Cliente {
 
     // Getters y Setters
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
