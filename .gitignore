@@ -39,3 +39,4 @@ out/
 # Ignorar todos los application-*.properties excepto el principal
 src/main/resources/application-*.properties
 !src/main/resources/application.properties
+src/main/resources/application.properties

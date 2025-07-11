@@ -4,7 +4,6 @@ package com.tecdesoftware.market.persistence.entity;
 
 import jakarta.persistence.*;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -16,10 +15,10 @@ public class Compra {
     //Autogenera ids autoincrementables
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column (name="id_compra")
-    private int idCompra;
+    private Integer idCompra;
 
     @Column(name="id_cliente")
-    private int idCliente;
+    private String idCliente;
 
 
     private LocalDateTime fecha;
@@ -37,8 +36,28 @@ public class Compra {
     @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
     private Cliente cliente;
 
+    public List<CompraProducto> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(List<CompraProducto> productos) {
+        this.productos = productos;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public void setIdCompra(Integer idCompra) {
+        this.idCompra = idCompra;
+    }
+
     //Una compra tinee muchos productos
-    @OneToMany(mappedBy = "compra")
+    @OneToMany(mappedBy = "compra", cascade = CascadeType.ALL)
     private List<CompraProducto> productos;
 
     public int getIdCompra() {
@@ -49,11 +68,11 @@ public class Compra {
         this.idCompra = idCompra;
     }
 
-    public int getIdCliente() {
+    public String getIdCliente() {
         return idCliente;
     }
 
-    public void setIdCliente(int idCliente) {
+    public void setIdCliente(String idCliente) {
         this.idCliente = idCliente;
     }
 
