@@ -18,6 +18,14 @@ public class CompraProductoPK {
         return idCompra;
     }
 
+    public int getIdProducto() {
+        return idProducto;
+    }
+
+    public void setIdProducto(int idProducto) {
+        this.idProducto = idProducto;
+    }
+
     public void setIdCompra(int idCompra) {
         this.idCompra = idCompra;
     }

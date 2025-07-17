@@ -14,7 +14,7 @@ public interface PurchaseMapper {
 
     @Mappings({
             @Mapping(source = "idCompra", target = "purchaseId"),
-            @Mapping(source = "idCliente", target = "clienteId"),
+            @Mapping(source = "idCliente", target = "clientId"),
             @Mapping(source = "fecha", target = "date"),
             @Mapping(source = "medioPago", target = "paymentMethod"),
             @Mapping(source = "comentario", target = "comment"),
