@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin(origins = "*")
 //Le dice a Spring que va a ser el controlador de una API REST
 @RestController
 @RequestMapping("/products")
